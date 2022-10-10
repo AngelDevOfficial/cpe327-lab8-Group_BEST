@@ -4,13 +4,13 @@ public class Operation {
 	private String errorMessage = "";
 	private double answer;
 	private char operator;
-	private double number1;
-	private double number2;
+	private double operand1;
+	private double operand2;
 
-	public Operation(char operator, double number1, double number2) {
+	public Operation(char operator, double operand1, double operand2) {
 		this.operator = operator;
-		this.number1 = number1;
-		this.number2 = number2;
+		this.operand1 = operand1;
+		this.operand2 = operand2;
 		operate();
 	}
 
@@ -22,24 +22,24 @@ public class Operation {
 
 		switch (operator) {
 			case '+': {
-				this.answer = Add.bro(number1, number2);
+				this.answer = Add.operate(operand1, operand2);
 				break;
 			}
 			case '-': {
-				this.answer = Subtract.bro(number1, number2);
+				this.answer = Subtract.operate(operand1, operand2);
 				break;
 			}
 			case '*': {
-				this.answer = Multiply.bro(number1, number2);
+				this.answer = Multiply.operate(operand1, operand2);
 				break;
 			}
 			case '/': {
-				if (!Divide.validateDivide(number1, number2)) {
+				if (!Divide.validateDivide(operand1, operand2)) {
 					this.valid = false;
 					this.errorMessage = "Error: Divide by zero";
 					break;
 				} else {
-					this.answer = Divide.bro(number1, number2);
+					this.answer = Divide.operate(operand1, operand2);
 					break;
 				}
 			}

@@ -1,6 +1,6 @@
 
 public class Add {
-	public static double bro(double number1, double number2) {
-		return number1 + number2;
+	public static double operate(double operand1, double operand2) {
+		return operand1 + operand2;
 	}
 }
